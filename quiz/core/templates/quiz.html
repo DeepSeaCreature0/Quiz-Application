@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <form method="post">
+        {% csrf_token %}
+        <ul>
+            <input type="hidden" id="user_id" name="user_id" value="{{ request.POST.user_id }}">
+            <input type="hidden" id="user_name" name="user_name" value="{{ request.POST.user_name }}">
+            <h2>Which is your favourite game? </h2>
+            {% for radio in form.favorite_game %}
+            <li>{{ radio }}</li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

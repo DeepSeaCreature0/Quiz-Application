@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Quiz</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="user_id" placeholder="Enter User ID"><br><br>
+        <input type="text" name="user_name" placeholder="Enter Your Name"><br><br>
+        <button type="submit">Start Quiz</button>
+    </form>
+</body>
+</html>
